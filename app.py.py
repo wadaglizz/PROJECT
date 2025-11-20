@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1V7GZDemNMDHtrMJGnE7ltXDMYWOQ5gWq
 """
 
-pip install streamlit pandas scikit-learn matplotlib seaborn
-
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import joblib
