@@ -43,7 +43,6 @@ joblib.dump(model, "student_model.pkl")
 print("Model trained and saved successfully!")
 
 # Commented out IPython magic to ensure Python compatibility.
-%%writefile app.py
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
