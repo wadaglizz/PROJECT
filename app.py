@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -27,7 +26,8 @@ input_data = pd.DataFrame({
 })
 
 # Predict button
-if st.button("Predict"):n    prediction = model.predict(input_data)[0]
+if st.button("Predict"):
+    prediction = model.predict(input_data)[0]
     proba = model.predict_proba(input_data)[0]
 
     st.subheader(f"Prediction: {'Dropout' if prediction == 1 else 'No Dropout'}")
@@ -81,24 +81,3 @@ st.write(f"**Recall:** {recall:.2f}")
 st.write(f"**F1-Score:** {f1:.2f}")
 
 st.warning("Note: These metrics are calculated on the training data and may not reflect performance on unseen data. Perfect scores often indicate potential overfitting given the small dataset.")
-
-# --- Dashboard Explanation Section ---
-st.header("How to Use This Dashboard")
-st.markdown("""
-This interactive dashboard allows you to predict the likelihood of student dropout based on key academic metrics. 
-
-**1. Adjust the Sliders:**
-Use the sliders for 'Attendance %', 'CAT Score', and 'Exam Score' to input hypothetical student performance data. These values will instantly update the input for the prediction.
-
-**2. Get Prediction:**
-Click the 'Predict' button to see the model's prediction (Dropout or No Dropout) and the associated probability. The probability indicates the model's confidence in its prediction.
-
-**3. Visualize Input:**
-*   **Student Metrics Bar Chart:** Shows a bar chart of the input values you've selected, allowing for a quick overview of the student's profile.
-*   **CAT vs Exam Score Scatter Plot:** Visualizes the relationship between the Continuous Assessment Test (CAT) score and the Exam score for the selected student. 
-
-**4. Model Performance:**
-Below the interactive section, you'll find the model's performance metrics (Accuracy, Precision, Recall, F1-Score) calculated on the training data. This gives you an idea of how well the model performed on the data it was trained on.
-
-This tool is designed to provide insights into potential student dropout and can be used to inform early intervention strategies.
-""")
